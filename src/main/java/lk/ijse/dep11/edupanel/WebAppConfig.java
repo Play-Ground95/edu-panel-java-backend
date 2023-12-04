@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
@@ -12,5 +13,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan
 //Java 8 walin passe ekama annotation eka use karanna plwn
 public class WebAppConfig {
-
+@Bean
+    public StandardServletMultipartResolver multipartResolver(){
+    return new StandardServletMultipartResolver();
+}
 }
